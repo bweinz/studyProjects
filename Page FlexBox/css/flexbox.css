@@ -1,0 +1,111 @@
+.cabecalhoPrincipal .container {
+  display: flex; /*funciona nos filhos*/
+  align-items: center; /*Alinha elementos verticalmente*/
+  justify-content: space-between; /*pegue esse espaço e coloque entre elementos só em espaços de sobra*/
+}
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+}
+
+.rodapePrincipal-patrocinadores .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /*destribuir o espaço em volta dos elementos*/
+  width: 70%;
+  margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+  width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+  display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+  display: flex;
+  /*
+    flex-direction: column; row é o padrão um do lado do outro horizontal, vertical é column
+    flex-wrap: wrap; Para que a coluna quando chegar no final quebre para o lado a continuação*/
+  flex-flow: column wrap; /*Substitui as duas de cima*/
+  height: 250px;
+
+  /*Wrap= não coube no pai? não! quebra para a proxima coluna*/
+  /*Colocamos um elemento de baixo do outro,java, php pascal... e depois quebrava a linha */
+}
+
+.conteudoPrincipal-cursos {
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: flex-start; Joga tudo para o inicio, vem como padrão*/
+}
+
+.conteudoPrincipal-cursos-link {
+  width: 23%;
+  margin: 1%;
+}
+
+.conteudoPrincipal-cursos-link:nth-chield(4n) {
+  /*Pega os filhos multiplos de 4, ou seja .net javaweb redes e logica de programação e tira a margem do lado direito*/
+  margin-right: 0;
+}
+
+.conteudoPrincipal-cursos-link:nth-chield(4n + 1) {
+  /*Segue a mesma ideia do de cima, mas calcula o numero +1 então seria a posição 5,10... mas pega a primeira também pois 4n começa com valor de 0, 0+1 = 1*/
+  margin-right: 0;
+}
+
+.videoSobre .container{
+  display: flex;
+  
+}
+
+.videoSobre-sobre{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2; /*Pega o espaço que está sobrando e cresce o box*/
+
+}
+.videoSobre-sobre-list{
+  flex-grow: 1;
+}
+
+.videoSobre-video{
+  flex-grow: 1; /*Divide mais 1 parte do espaço para o video, se colocar 2, dividiria em 3 pois já tem 1 em video-sobre*/
+  flex-shrink: 2;
+}
+
+
+
+
+/*parte mobile*/
+/*Quando usamos responsividade o valor do align items que muda o vertical fica horizontal e o flex direction que é horizontal muda para vertical*/
+.cabecalhoPrincipal-nav {
+  flex-direction: column;
+}
+/*aumento do git kkk*/ 
+.cabecalhoPrincipal .container {
+  flex-direction: column;
+  align-items: initial;
+  text-align: center;
+}
+
+.cabecalhoPrincipal-nav-link-app{
+order: -1 /*Muda a posição dos items da coluna para -1, o ultimo vira primeiro ...*/
+}
+
+.videoSobre .container{
+  flex-direction: column;
+}
+
+.videoSobre-video{
+  margin: 0 auto;
+}
